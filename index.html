@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Semana de Burbujita ✨</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="header">
+        <!-- HEADER IZQUIERDO: Enfermera + Título + Botiquín -->
+        <div class="header-left">
+            <img src="img/07_enfermera_con_pixel.png" alt="Enfermera" class="header-logo">
+
+            <div class="header-title">
+                <span class="star">⭐</span>
+                <h1>Semana de Burbujita</h1>
+                <span class="star">⭐</span>
+            </div>
+
+            <!-- Icono del botiquín movido aquí -->
+            <img src="img/06_pixel_en_botiquin.png" alt="Botiquín" class="header-icon">
+        </div>
+
+        <!-- HEADER DERECHO: solo los botones -->
+        <div class="header-right">
+            <div class="controls">
+                <button class="btn btn-export" id="exportBtn">
+                    <span class="btn-icon">⬇️</span>
+                    <span class="btn-text">Exportar</span>
+                </button>
+                <button class="btn btn-import" id="importBtn">
+                    <span class="btn-icon">⬆️</span>
+                    <span class="btn-text">Importar</span>
+                </button>
+                <button class="btn btn-clear" id="clearBtn">
+                    <span class="btn-icon">🗑️</span>
+                    <span class="btn-text">Limpiar Semana</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticker-palette" id="stickerPalette">
+        <div class="palette-header">
+            <h3>🎨 Stickers</h3>
+            <button class="palette-toggle" id="paletteToggle">📌</button>
+        </div>
+        <div class="palette-content" id="paletteContent">
+            <div class="palette-grid" id="paletteGrid">
+                <!-- Las imágenes se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="week-planner">
+            <h2>📅 Planificador Semanal</h2>
+            <div class="days-grid">
+                <div class="day-card" id="lunes">
+                    <h3>🌙 Lunes</h3>
+                    <input type="text" class="task-input" placeholder="Nueva tarea..." data-day="lunes">
+                    <div class="task-list" id="tasks-lunes"></div>
+                    <div class="sticker-area" data-dropzone="lunes"></div>
+                </div>
+                <div class="day-card" id="martes">
+                    <h3>🔥 Martes</h3>
+                    <input type="text" class="task-input" placeholder="Nueva tarea..." data-day="martes">
+                    <div class="task-list" id="tasks-martes"></div>
+                    <div class="sticker-area" data-dropzone="martes"></div>
+                </div>
+                <div class="day-card" id="miercoles">
+                    <h3>🌟 Miércoles</h3>
+                    <input type="text" class="task-input" placeholder="Nueva tarea..." data-day="miercoles">
+                    <div class="task-list" id="tasks-miercoles"></div>
+                    <div class="sticker-area" data-dropzone="miercoles"></div>
+                </div>
+                <div class="day-card" id="jueves">
+                    <h3>⭐ Jueves</h3>
+                    <input type="text" class="task-input" placeholder="Nueva tarea..." data-day="jueves">
+                    <div class="task-list" id="tasks-jueves"></div>
+                    <div class="sticker-area" data-dropzone="jueves"></div>
+                </div>
+                <div class="day-card" id="viernes">
+                    <h3>🎉 Viernes</h3>
+                    <input type="text" class="task-input" placeholder="Nueva tarea..." data-day="viernes">
+                    <div class="task-list" id="tasks-viernes"></div>
+                    <div class="sticker-area" data-dropzone="viernes"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sections-grid">
+            <div class="section-card">
+                <h3>🎯 Meta de la Semana</h3>
+                <textarea class="section-textarea" id="meta" placeholder="Define tu principal objetivo para esta semana..."></textarea>
+                <div class="sticker-area" data-dropzone="meta"></div>
+            </div>
+
+            <div class="section-card">
+                <h3>🛁 Autocuidado</h3>
+                <textarea class="section-textarea" id="autocuidado" placeholder="¿Qué harás por ti esta semana? (Ej: un baño relajante, leer, pasear)"></textarea>
+                <div class="sticker-area" data-dropzone="autocuidado"></div>
+            </div>
+
+            <div class="section-card">
+                <h3>💝 Emociones de la Semana</h3>
+                <textarea class="section-textarea" id="emociones" placeholder="¿Cómo te sientes? ¿Qué emociones predominan?"></textarea>
+                <div class="sticker-area" data-dropzone="emociones"></div>
+            </div>
+
+            <div class="section-card">
+                <h3>📝 Notas Importantes</h3>
+                <textarea class="section-textarea" id="notas" placeholder="Recordatorios, ideas, números importantes..."></textarea>
+                <div class="sticker-area" data-dropzone="notas"></div>
+            </div>
+
+            <div class="section-card motivational-phrases">
+                <h3>💝 Frases para tu Corazón</h3>
+                <div class="phrases-container" id="phrases">
+                    <div class="phrase-bubble">Estás donde necesitas estar.</div>
+                    <div class="phrase-bubble">Hoy también cuenta.</div>
+                    <div class="phrase-bubble">Paso a paso, sin rendirse.</div>
+                    <div class="phrase-bubble">Pequeños logros, grandes cambios.</div>
+                    <div class="phrase-bubble">Tu luz es necesaria, burbujita.</div>
+                    <div class="phrase-bubble">Estoy orgulloso de ti mi amor PD: Joel 💖💖</div>
+                </div>
+                <div class="sticker-area" data-dropzone="frases"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Hecho con ❤️ por Joel</p>
+    </footer>
+
+    <input type="file" id="fileImport" accept=".json" style="display: none;">
+
+    <script src="script.js"></script>
+</body>
+</html>
